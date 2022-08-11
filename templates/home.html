@@ -1,0 +1,10 @@
+<html>
+    <title>BR Capital</title>
+    <h2 style="border: 3px solid black; width: fit-content; padding-left: 2%; padding-right: 2%;">BR Capital</h2>
+    <body style="background-color: aquamarine;">
+    <h3 style="margin-top: 20%;"><center>Available offers</center></h3>
+    {% for offer in available_offers %}
+    <center><a style="text-decoration: none;" href="#">{{offer}} --- Hurry up, only {{offer.available}}% is left!</a></center>
+    {% endfor %}
+    </body>
+</html>

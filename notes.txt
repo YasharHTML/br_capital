@@ -1,0 +1,3 @@
+* Error messages in login page.
+* Ignore an offer
+* Delete 'Home' from 'Home > Dashboard'

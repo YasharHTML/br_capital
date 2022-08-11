@@ -1,0 +1,418 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/logo_final.svg' %}">
+    <link href="{% static 'assets/node_modules/morrisjs/morris.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/node_modules/c3-master/c3.min.css' %}" rel="stylesheet">
+    <link href="{% static 'dist/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'dist/css/pages/dashboard1.css' %}" rel="stylesheet">
+</head>
+<body class="skin-default-dark fixed-layout">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <b>
+                            <img src="{% static 'assets/images/logo_final.svg' %}" height="80" width="100" alt="homepage" class="dark-logo" />
+                            <img src="{% static 'assets/images/logo-light-icon.png' %}" alt="homepage" class="light-logo" />
+                        </b>
+                        <span>
+                    </a>
+                </div>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light"
+                                href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
+                                href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
+                                    class="srh-btn"><i class="fa fa-times"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="left-sidebar">
+            <div class="d-flex no-block nav-text-box align-items-center">
+                <span><img src="{% static 'assets/images/logo_final.svg' %}" height="80" width="100"></span>
+                <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i
+                        class="ti-menu"></i></a>
+                <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i
+                        class="ti-menu ti-close"></i></a>
+            </div>
+            <div class="scroll-sidebar">
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li> <a class="waves-effect waves-dark" href="{% url 'home' %}" aria-expanded="false"><i
+                                    class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="{% url 'profile' %}" aria-expanded="false"><i
+                                    class="fa fa-user-circle-o"></i><span class="hide-menu">Profile</span></a></li>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">Dashboard</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card oh">
+                            <div class="card-body">
+                                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+</head>
+
+<body>
+
+    <div class="my-cc">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-4 col-sm-3 col-xs-3">
+                <!-- Card -->
+                <div class="item item-000-bg item-image">
+                    <!-- Transparent Image -->
+                    <img src="{% static 'images/transparent.png' %}" alt="" class="img-responsive" />
+                    <!-- Heading -->
+                        <!-- Heading -->
+                        <h3>Debit Card</h3>
+                        <!-- Bank Name -->
+                        <h4>BR</h4>
+                    <!-- Account -->
+                    <div class="item-account">
+                        <!-- Value -->
+                        <span>{{user_azn_balance}} AZN</span>
+                    </div>
+                    <!-- Validity Starts -->
+                    <div class="item-validity">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <!-- Item -->
+                                <div class="item-valid clearfix">
+                                    <!-- Valid From -->
+                                    <h5>Valid From</h5>
+                                    <!-- Date -->
+                                    <span>08/21</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <!-- Item -->
+                                <div class="item-valid clearfix">
+                                    <!-- Valid Thru -->
+                                    <h5>Valid Thru</h5>
+                                    <!-- Date -->
+                                    <span>08/24</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Validity Ends -->
+
+                    <!-- Card Type Starts -->
+                    <div class="item-cc-type clearfix">
+                        <!-- Type -->
+                        <h6>VISA CARD</h6>
+                        <!-- Icon -->
+                        <i class="fa fa-cc-visa"></i>
+                    </div>
+                    <!-- Card Type Ends -->
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-3 col-xs-3">
+                <!-- Card -->
+                <?xml version="1.0" encoding="utf-8"?>
+                <!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 4229 3274" style="enable-background:new 0 0 4229 3274;" xml:space="preserve">
+                <style type="text/css">
+                    .st0{fill:#1B75BC;}
+                </style>
+                <g id="XMLID_687_">
+                    <path id="XMLID_728_" class="st0" d="M58,2754.8c0,122,98.9,221,221,221h3671c122,0,221-98.9,221-221V1282.3H58V2754.8z
+                         M3163.6,2042.1c75.6,0,144.2,29.7,195.2,77.8c51-48.1,119.5-77.8,195.2-77.8c157.3,0,284.8,127.5,284.8,284.8
+                        c0,157.3-127.5,284.8-284.8,284.8c-75.6,0-144.2-29.7-195.2-77.8c-51,48.1-119.5,77.8-195.2,77.8c-157.3,0-284.8-127.5-284.8-284.8
+                        C2878.8,2169.6,3006.3,2042.1,3163.6,2042.1z M1443.1,2252.8H1580c40.9,0,74.1,33.2,74.1,74.1v0c0,40.9-33.2,74.1-74.1,74.1h-136.9
+                        c-40.9,0-74.1-33.2-74.1-74.1v0C1369,2286,1402.2,2252.8,1443.1,2252.8z M990.9,2252.8h136.9c40.9,0,74.1,33.2,74.1,74.1v0
+                        c0,40.9-33.2,74.1-74.1,74.1H990.9c-40.9,0-74.1-33.2-74.1-74.1v0C916.7,2286,949.9,2252.8,990.9,2252.8z M538.6,2252.8h136.9
+                        c40.9,0,74.1,33.2,74.1,74.1v0c0,40.9-33.2,74.1-74.1,74.1H538.6c-40.9,0-74.1-33.2-74.1-74.1v0
+                        C464.5,2286,497.7,2252.8,538.6,2252.8z"/>
+                    <path id="XMLID_740_" class="st0" d="M3950,231.7H279c-122,0-221,98.9-221,221v320.8h4113V452.7
+                        C4171,330.6,4072.1,231.7,3950,231.7z"/>
+                    <ellipse id="XMLID_748_" class="st0" cx="3358.8" cy="2326.9" rx="89.6" ry="207"/>
+                </g>
+                </svg>
+                <div class="item item-000-bg item-image">
+                    <!-- Transparent Image -->
+                    <img src="{% static 'images/transparent.png' %}" alt="" class="img-responsive" />
+                    <!-- Heading -->
+                    <div class="item-heading item-000-bg clearfix">
+                        <!-- Heading -->
+                        <h3>Debit Card</h3>
+                        <!-- Bank Name -->
+                        <h4>BR</h4>
+                    </div>
+                    <!-- Account -->
+                    <div class="item-account">
+                        <!-- Value -->
+                        <span>{{user_usd_balance}} USD</span>
+                        <!-- <span>5678</span>
+                        <span>0011</span>
+                        <span>1626</span> -->
+                    </div>
+                    <!-- Validity Starts -->
+                    <div class="item-validity">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <!-- Item -->
+                                <div class="item-valid clearfix">
+                                    <!-- Valid From -->
+                                    <h5>Valid From</h5>
+                                    <!-- Date -->
+                                    <span>08/21</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <!-- Item -->
+                                <div class="item-valid clearfix">
+                                    <!-- Valid Thru -->
+                                    <h5>Valid Thru</h5>
+                                    <!-- Date -->
+                                    <span>08/24</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Validity Ends -->
+
+                    <!-- Card Type Starts -->
+                    <div class="item-cc-type clearfix">
+                        <!-- Type -->
+                        <h6>VISA CARD</h6>
+                        <!-- Icon -->
+                        <i class="fa fa-cc-visa"></i>
+                    </div>
+                    <!-- Card Type Ends -->
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-3 col-xs-3">
+                <!-- Card -->
+                <div class="item item-000-bg item-image" style="background-image: url('images/bg-1.jpg');">
+                    <!-- Transparent Image -->
+                    <img src="{% static 'images/transparent.png' %}" alt="" class="img-responsive" />
+                    <!-- Heading -->
+                    <div class="item-heading item-000-bg clearfix">
+                        <!-- Heading -->
+                        <h3>Debit Card</h3>
+                        <!-- Bank Name -->
+                        <h4>BR</h4>
+                    </div>
+                    <!-- Account -->
+                    <div class="item-account">
+                        <!-- Value -->
+                        <span>{{user_eur_balance}} EUR</span>
+                        <!-- <span>5678</span>
+                        <span>0011</span>
+                        <span>1626</span> -->
+                    </div>
+                    <!-- Validity Starts -->
+                    <div class="item-validity">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <!-- Item -->
+                                <div class="item-valid clearfix">
+                                    <!-- Valid From -->
+                                    <h5>Valid From</h5>
+                                    <!-- Date -->
+                                    <span>08/21</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <!-- Item -->
+                                <div class="item-valid clearfix">
+                                    <!-- Valid Thru -->
+                                    <h5>Valid Thru</h5>
+                                    <!-- Date -->
+                                    <span>08/24</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Validity Ends -->
+
+                    <!-- Card Type Starts -->
+                    <div class="item-cc-type clearfix">
+                        <!-- Type -->
+                        <h6>VISA CARD</h6>
+                        <!-- Icon -->
+                        <i class="fa fa-cc-visa"></i>
+                    </div>
+                    <!-- Card Type Ends -->
+                </div>
+            </div>
+
+		</div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery-1.11.3.min.js' %}" type="text/javascript"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'js/placeholder.min.js' %}" type="text/javascript"></script>
+
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex m-b-30 align-items-center no-block">
+                                    <h5 class="card-title ">Net share value (in thousands of US dollars)</h5>
+                                    <div class="ml-auto">
+                                        <ul class="list-inline font-12">
+                                            <li><i class="fa fa-circle text-info"></i> Startups</li>
+                                            <li><i class="fa fa-circle text-primary"></i> Companies</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="morris-area-chart" style="height: 350px;"></div>
+                            </div>
+                            <div class="card-body bg-light">
+                                <div class="row text-center m-b-20">
+                                    <div class="col-lg-4 col-md-4 m-t-20">
+                                        <h2 class="m-b-0 font-light">4000</h2><span class="text-muted">Startups</span>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 m-t-20">
+                                        <h2 class="m-b-0 font-light">2000</h2><span class="text-muted">Companies</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Offers</h5>
+                                <h6 class="card-subtitle">Check out available offers           <hr>                                  <a href="{% url 'offers' %}" class="btn m-t-10 btn-rounded btn-outline-danger">All Offers</a>
+                                </h6>
+                                <div class="steamline m-t-40">    
+                                {% for u in available_offers %}
+                                <a href="{% url 'offer' u.id %}">
+                                    <div class="sl-item">
+                                        <div class="sl-left bg-success"> <i class="fa fa-user"></i></div>
+                                        <div class="sl-right">
+                                            <div class="font-medium">{{u.startup}} <span class="sl-date"> {{u.updated | timesince}} ago</span>
+                                            </div>
+                                            <div class="desc">{{u.description}}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- News -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h5 class="card-title">Investments Overview</h5>
+                                        <h6 class="card-subtitle">Check your active investments </h6>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <select class="custom-select b-0">
+                                            <option>January</option>
+                                            <option value="1">February</option>
+                                            <option value="2" selected="">March</option>
+                                            <option value="3">April</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Company name</th>
+                                            <th>Equity</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for i in inv %}
+                                        <tr>
+                                            <td class="txt-oflo">{{i.offer.startup}}</td>
+                                            <td class="txt-oflo">{{i.equity}}%</td>
+                                            <td><span class="text-success">{{i.date}}</span></td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- To do chat and message -->
+                <!-- ============================================================== -->
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'assets/node_modules/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!-- Bootstrap popper Core JavaScript -->
+    <script src="{% static 'assets/node_modules/popper/popper.min.js' %}"></script>
+    <script src="{% static 'assets/node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{% static 'dist/js/perfect-scrollbar.jquery.min.js' %}"></script>
+    <!--Wave Effects -->
+    <script src="{% static 'dist/js/waves.js' %}"></script>
+    <!--Menu sidebar -->
+    <script src="{% static 'dist/js/sidebarmenu.js' %}"></script>
+    <!--Custom JavaScript -->
+    <script src="{% static 'dist/js/custom.min.js' %}"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <!--morris JavaScript -->
+    <script src="{% static 'assets/node_modules/raphael/raphael-min.js' %}"></script>
+    <script src="{% static 'assets/node_modules/morrisjs/morris.min.js' %}"></script>
+    <script src="{% static 'assets/node_modules/jquery-sparkline/jquery.sparkline.min.js' %}"></script>
+    <!--c3 JavaScript -->
+    <script src="{% static 'assets/node_modules/d3/d3.min.js' %}"></script>
+    <script src="{% static 'assets/node_modules/c3-master/c3.min.js' %}"></script>
+    <!-- Chart JS -->
+    <script src="{% static 'dist/js/dashboard1.js' %}"></script>
+</body>
+
+</html>
