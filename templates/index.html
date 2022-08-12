@@ -9,7 +9,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/logo_final.svg' %}">
+    <link rel="icon" sizes="16x16" href="{% static 'assets/images/logo_final.svg' %}">
     <link href="{% static 'assets/node_modules/morrisjs/morris.css' %}" rel="stylesheet">
     <link href="{% static 'assets/node_modules/c3-master/c3.min.css' %}" rel="stylesheet">
     <link href="{% static 'dist/css/style.css' %}" rel="stylesheet">
@@ -97,7 +97,7 @@
                 <!-- Card -->
                 <div class="item item-000-bg item-image">
                     <!-- Transparent Image -->
-                    <img src="{% static 'images/transparent.png' %}" alt="" class="img-responsive" />
+                    <img src="{% static 'images/transparent.png' %}" class="img-responsive" />
                     <!-- Heading -->
                         <!-- Heading -->
                         <h3>Debit Card</h3>
@@ -169,7 +169,7 @@
                 </svg>
                 <div class="item item-000-bg item-image">
                     <!-- Transparent Image -->
-                    <img src="{% static 'images/transparent.png' %}" alt="" class="img-responsive" />
+                    <img src="{% static 'images/transparent.png' %}" class="img-responsive" />
                     <!-- Heading -->
                     <div class="item-heading item-000-bg clearfix">
                         <!-- Heading -->
@@ -225,7 +225,7 @@
                 <!-- Card -->
                 <div class="item item-000-bg item-image" style="background-image: url('images/bg-1.jpg');">
                     <!-- Transparent Image -->
-                    <img src="{% static 'images/transparent.png' %}" alt="" class="img-responsive" />
+                    <img src="{% static 'images/transparent.png' %}" class="img-responsive" />
                     <!-- Heading -->
                     <div class="item-heading item-000-bg clearfix">
                         <!-- Heading -->
@@ -317,7 +317,9 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Offers</h5>
-                                <h6 class="card-subtitle">Check out available offers           <hr>                                  <a href="{% url 'offers' %}" class="btn m-t-10 btn-rounded btn-outline-danger">All Offers</a>
+                                <h6 class="card-subtitle">Check out available offers
+                                    <hr>
+                                    <a href="{% url 'offers' %}" class="btn m-t-10 btn-rounded btn-outline-danger">All Offers</a>
                                 </h6>
                                 <div class="steamline m-t-40">    
                                 {% for u in available_offers %}
