@@ -7,7 +7,7 @@ from .forms import UserCreationForm
 
 @login_required(login_url='/login/')
 def home(request):
-    user_azn_balance = InvestorWallet.objects.get(investor=request.user, curr='AZN').balance
+    user_azn_balance = InvestorWallet.objects.get(investor=request.user, curr='AZN').balance 
     user_usd_balance = InvestorWallet.objects.get(investor=request.user, curr='USD').balance
     user_eur_balance = InvestorWallet.objects.get(investor=request.user, curr='EUR').balance
     available_offers = Offer.objects.filter(available__gt=0).order_by('-updated')[:4]

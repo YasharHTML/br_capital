@@ -38,6 +38,17 @@ class Investor(AbstractUser):
                 offer.finish()
             return 0
 
+    def save(self, *args, **kwargs):
+        super(Investor, self).save(*args, **kwargs)
+        a, b, c = [
+            InvestorWallet(curr = 'AZN', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self),
+            InvestorWallet(curr = 'USD', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self),
+            InvestorWallet(curr = 'EUR', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self)
+        ]
+        a.save()
+        b.save()
+        c.save()
+
     def __str__(self):
         return f"{self.username} - {self.identity_fin}"
 
