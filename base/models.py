@@ -41,13 +41,13 @@ class Investor(AbstractUser):
     def save(self, *args, **kwargs):
         super(Investor, self).save(*args, **kwargs)
         a, b, c = [
-            InvestorWallet(curr = 'AZN', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self),
-            InvestorWallet(curr = 'USD', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self),
-            InvestorWallet(curr = 'EUR', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self)
+            InvestorWallet.objects.filter(curr = 'AZN', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self),
+            InvestorWallet.objects.filter(curr = 'USD', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self),
+            InvestorWallet.objects.filter(curr = 'EUR', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self)
         ]
-        if not a in InvestorWallet.objects.all(): a.save()
-        if not b in InvestorWallet.objects.all(): b.save()
-        if not c in InvestorWallet.objects.all(): c.save()
+        if not a.exists(): InvestorWallet(curr = 'AZN', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self).save()
+        if not b.exists(): InvestorWallet(curr = 'USD', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self).save()
+        if not c.exists(): InvestorWallet(curr = 'EUR', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self).save()
 
     def __str__(self):
         return f"{self.username} - {self.identity_fin}"
