@@ -22,8 +22,8 @@ File: scss
  *	12. Forms
  *	14. Component
  */
-@import url(../../../assets/icons/font-awesome/css/font-awesome.min.css);
-@import url(../../../assets/icons/themify-icons/themify-icons.css);
+@import url(../../assets/icons/font-awesome/css/font-awesome.min.css);
+@import url(../../assets/icons/themify-icons/themify-icons.css);
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700");
 .skin-default-dark {
   /*Theme Colors*/ }
