@@ -45,9 +45,9 @@ class Investor(AbstractUser):
             InvestorWallet.objects.filter(curr = 'USD', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self),
             InvestorWallet.objects.filter(curr = 'EUR', balance = 0.0, iban_no = 'AZ9287265392706420', investor = self)
         ]
-        if not a.exists(): a.save()
-        if not b.exists(): b.save()
-        if not c.exists(): c.save()
+        if not a.exists(): a[0].save()
+        if not b.exists(): b[0].save()
+        if not c.exists(): c[0].save()
 
     def __str__(self):
         return f"{self.username} - {self.identity_fin}"
