@@ -56,7 +56,8 @@ def register(request):
 
 @login_required(login_url='/login/')
 def profile(request):
-    return render(request, 'pages-profile.html')
+    user = request.user
+    return render(request, 'pages-profile.html', {'user': user})
 
 @login_required(login_url='/login/')
 def offer(request, pk):

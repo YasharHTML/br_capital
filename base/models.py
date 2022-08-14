@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.db.models import F
 import datetime
+from cloudinary.models import CloudinaryField
 
 class AbstractInvestment(models.Model):
     offer = models.ForeignKey('Offer', on_delete=models.CASCADE, related_name="investments", null=True, blank=True)
@@ -14,7 +15,7 @@ class Investor(AbstractUser):
     contact_num = models.CharField(max_length=50, unique=True)
     email = models.CharField(max_length=20, unique=True)
     full_name = models.CharField(max_length=50)
-    avatar = models.ImageField(null=True, blank=True)
+    avatar = CloudinaryField('image', default='https://res.cloudinary.com/dn3laf4bh/image/upload/v1647623057/avatar_iu9mmi.svg')
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True)
     USERNAME_FIELD = 'username'
