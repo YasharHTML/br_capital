@@ -5,4 +5,4 @@ from .models import *
 class UserCreationForm(UserCreationForm):
     class Meta:
         model = Investor
-        fields = ['identity_fin', 'contact_num', 'full_name', 'username', 'password1', 'password2']
+        fields = ['identity_fin', 'contact_num', 'email', 'full_name', 'username', 'password1', 'password2']

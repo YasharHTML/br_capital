@@ -60,6 +60,10 @@
 					</div>
 
 					<div class="wrap-input100 validate-input">
+						{{ form.email }}
+					</div>
+
+					<div class="wrap-input100 validate-input">
 						{{ form.contact_num }}
 					</div>
 
@@ -107,6 +111,7 @@
     <script>
         document.getElementById('id_full_name').placeholder = 'Full name';
         document.getElementById('id_identity_fin').placeholder = 'FIN code (from ID)';
+        document.getElementById('id_email').placeholder = 'Email';
         document.getElementById('id_contact_num').placeholder = 'Contact number (994...)';
         document.getElementById('id_username').placeholder = 'Username';
         document.getElementById('id_password1').placeholder = 'Password';
@@ -114,6 +119,8 @@
         for (let i = 0; i < document.getElementsByTagName('input').length ; i++) {
             document.querySelectorAll('input')[i].autocomplete = "off";
         }
+
+		document.getElementById('id_full_name').focus();
     </script>
 
 	<div id="dropDownSelect1"></div>

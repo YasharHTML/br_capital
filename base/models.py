@@ -13,7 +13,7 @@ class AbstractInvestment(models.Model):
 class Investor(AbstractUser):
     identity_fin = models.CharField(max_length=50, unique=True)
     contact_num = models.CharField(max_length=50, unique=True)
-    email = models.CharField(max_length=20, unique=True)
+    email = models.CharField(max_length=30, unique=True)
     full_name = models.CharField(max_length=50)
     avatar = CloudinaryField('image', default='https://res.cloudinary.com/dn3laf4bh/image/upload/v1647623057/avatar_iu9mmi.svg')
     created = models.DateTimeField(auto_now=True)
