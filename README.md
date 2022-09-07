@@ -1,5 +1,5 @@
 **BR Capital**
-BR Capital innovativ investisiya platformudur. Bizi fərqləndirən xüsusiyyətlərimiz:
+BR Capital innovativ investisiya platformudur. Bizi fərqləndirən xüsusiyyətlər:
 * Multivalyutalı investisiya imkanı
 * İnvestisiya hesabınının şəxsi bank hesabı ilə əlaqələndirilməsi
 * İnvestisiya axtaran potensiallı startupları bir araya gətirən platforma 
